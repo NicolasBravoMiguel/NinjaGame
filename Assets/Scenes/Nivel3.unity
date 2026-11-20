@@ -1196,7 +1196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66550b4dc75ca447d8992f9def0ffda0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JefeVida
-  vidaMaxima: 15
+  vidaMaxima: 20
   efectoGolpe: {fileID: 0}
   efectoDerrota: {fileID: 0}
   sonidoGolpe: {fileID: 0}
@@ -1215,9 +1215,9 @@ MonoBehaviour:
   proyectilPrefab: {fileID: 2600176158281868878, guid: 4a95d5635e3364781ba689b6db8ae0b7, type: 3}
   puntoA: {fileID: 1642636418}
   puntoB: {fileID: 566234781}
-  velocidad: 3
-  pausaEntreAtaques: 1.5
-  apertura: 15
+  velocidad: 5
+  pausaEntreAtaques: 1
+  apertura: 10
 --- !u!114 &1892869519
 MonoBehaviour:
   m_ObjectHideFlags: 0
