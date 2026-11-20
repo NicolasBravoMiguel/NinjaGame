@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.2] - UNRELEASED
+
+### Added
+- Shuriken del jugador con la tecla J (19/11/2026).
+- Escaleras: el jugador sube y baja con W/S (19/11/2026).
+- Escenas MenuPrincipal y Final, y cambio de nivel con Enter (19/11/2026).
+- Nivel 2: vigas, escaleras, barriles y mini jefe con 5 de vida (19/11/2026).
+- Los barriles se rompen con 2 shurikens (19/11/2026).
+- Nivel 3: jefe final con dos fases (20/11/2026).
+
+### Changed
+- La escena Nivel1_Graybox ahora se llama Nivel1 (19/11/2026).
+
 ## [0.0.1] - 18/11/2026
 
 ### Added
@@ -14,3 +27,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Meta que solo se activa al tocarla desde arriba (18/11/2026).
 - Cámara CamaraSube que sigue al jugador sin bajar de la lava (18/11/2026).
 - Scripts Constants, Peligro, Meta, VidasUI y Lava (18/11/2026).
+
+## [0.0.0] - 18/11/2026
+
+### Added
+- Documento de concepto: idea, objetivo, cómo se gana y cómo se pierde (17/11/2026).
+- Proyecto en Unity 6.6 (Universal 2D) y escena del nivel 1 (18/11/2026).
+- Graybox del nivel 1: suelo y plataformas con Box Collider 2D y layer Ground (18/11/2026).
+- Jugador con Rigidbody 2D, Box Collider 2D y GroundCheck (18/11/2026).
+- Script PlayerMovement: movimiento horizontal y salto con Input Manager clásico (18/11/2026).
+- Physics Material 2D SinFriccion para que el jugador no se pegue a las paredes (18/11/2026).
+- Se agrega el changelog al proyecto (18/11/2026).
+- Se agrega plantilla para PR (18/11/2026).
