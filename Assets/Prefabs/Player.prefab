@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6177011484841005463}
   - component: {fileID: 3662186733111104444}
   - component: {fileID: 6638380701918023273}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,11 +110,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   speed: 6
   jumpForce: 12
+  climbSpeed: 4
+  horizontalInput: 0
+  verticalInput: 0
   groundCheck: {fileID: 9120504962364461517}
   groundRadius: 0.15
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  efectoSalto: {fileID: 0}
+  sonidoSalto: {fileID: 0}
 --- !u!50 &3662186733111104444
 Rigidbody2D:
   serializedVersion: 5
@@ -197,7 +202,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9120504962364461517}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
