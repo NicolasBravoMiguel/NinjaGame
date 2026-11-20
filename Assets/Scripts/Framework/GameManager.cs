@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// Administra la partida: vidas, victoria, derrota y reinicio.
-/// Lanza eventos con Action.
+/// Administra la partida en todos los niveles: vidas, victoria, derrota y cambio de escena.
 /// </summary>
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
     public static Action OnVidasCambiaron;
+    public static Action OnJugadorGolpeado;
     public static Action OnJugadorReaparecio;
 
     public static int Vidas { get; private set; }
@@ -22,49 +22,63 @@ public class GameManager : MonoBehaviour
     public GameObject panelVictoria;
     public float tiempoReaparicion = 1.0f;
 
+    public GameObject efectoMuerte;
+    public AudioClip sonidoGolpe;
+
     private bool partidaTerminada;
+    private bool nivelCompletado;
     private bool reapareciendo;
 
-    /// <summary>
-    /// Se llama al crear el objeto: guarda la instancia para que otros scripts la usen.
-    /// </summary>
+    // Regresa las vidas a 0 cada vez que se da Play en el editor
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    static void ReiniciarEstaticos() { Vidas = 0; }
+
     void Awake()
     {
         Instance = this;
     }
 
-    /// <summary>
-    /// Inicializa la partida con 3 vidas y oculta los paneles.
-    /// </summary>
     void Start()
     {
         Time.timeScale = 1;
-        Vidas = Constants.VIDAS_INICIALES;
+        // Si se da Play directo en un nivel, empieza con 3 vidas
+        if (Vidas <= 0) NuevaPartida();
         panelGameOver.SetActive(false);
         panelVictoria.SetActive(false);
         OnVidasCambiaron?.Invoke();
     }
 
-    /// <summary>
-    /// Si la partida terminó, la tecla R recarga la escena.
-    /// </summary>
     void Update()
     {
         if (partidaTerminada && Input.GetKeyDown(Constants.TECLA_REINICIO))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            NuevaPartida();
+            SceneManager.LoadScene(Constants.ESCENA_NIVEL1);
+        }
+
+        if (nivelCompletado && Input.GetKeyDown(Constants.TECLA_CONTINUAR))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
     /// <summary>
-    /// Quita una vida. Con 0 vidas muestra Game Over. Si no, el jugador reaparece.
+    /// Empieza una partida nueva con 3 vidas (la usa también el menú principal).
     /// </summary>
+    public static void NuevaPartida()
+    {
+        Vidas = Constants.VIDAS_INICIALES;
+    }
+
     public void JugadorGolpeado()
     {
-        if (partidaTerminada || reapareciendo) return;
+        if (partidaTerminada || nivelCompletado || reapareciendo) return;
 
         Vidas--;
         OnVidasCambiaron?.Invoke();
+        OnJugadorGolpeado?.Invoke();
+        Efectos.Crear(efectoMuerte, player.transform.position);
+        Efectos.Sonar(sonidoGolpe);
 
         if (Vidas <= 0)
         {
@@ -78,20 +92,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Muestra la pantalla de victoria y detiene el juego.
-    /// </summary>
     public void Ganar()
     {
-        if (partidaTerminada) return;
-        partidaTerminada = true;
+        if (partidaTerminada || nivelCompletado) return;
+        nivelCompletado = true;
         panelVictoria.SetActive(true);
         Time.timeScale = 0;
     }
 
-    /// <summary>
-    /// Corrutina: oculta al jugador, espera y lo regresa al punto de inicio.
-    /// </summary>
     private IEnumerator Reaparecer()
     {
         reapareciendo = true;
