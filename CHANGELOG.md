@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.3] - 21/11/2026
+### Added
+- Sprites del jugador, mini jefe, jefe, escenario y corazones de vida.
+- Animaciones del jugador: idle, correr, saltar, escalar y atacar (Animator + PlayerAnimacion).
+- Animaciones del mini jefe y del jefe: idle y ataque.
+- Script Parallax para el fondo.
+### Changed
+- Plataformas, vigas y paredes con Draw Mode Tiled.
+- LanzadorBarriles y JefeFinal activan la animación de ataque.
+
 ## [0.0.2] - 20/11/2026
 
 ### Added
