@@ -16,10 +16,12 @@ public class JefeFinal : MonoBehaviour
 
     private JefeVida vida;
     private Transform player;
+    private Animator animator;
 
     void Start()
     {
         vida = GetComponent<JefeVida>();
+        animator = GetComponent<Animator>();
         player = GameObject.FindWithTag(Constants.TAG_PLAYER).transform;
         StartCoroutine(Comportamiento());
     }
@@ -50,6 +52,8 @@ public class JefeFinal : MonoBehaviour
     private void Disparar()
     {
         int cantidad = EnFase2() ? 5 : 3;
+        if (animator != null) animator.SetTrigger("Attack");
+
         Vector2 haciaJugador = (player.position - transform.position).normalized;
 
         for (int i = 0; i < cantidad; i++)
