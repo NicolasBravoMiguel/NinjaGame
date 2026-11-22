@@ -18,7 +18,8 @@ public class CamaraSube : MonoBehaviour
 
     void Start()
     {
-        camara = GetComponent<Camera>();
+        // La cámara puede estar en este objeto o ser hija (CamaraRig)
+        camara = GetComponentInChildren<Camera>();
         posicionInicial = transform.position;
     }
 
