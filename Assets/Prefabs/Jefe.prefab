@@ -140,9 +140,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JefeVida
   vidaMaxima: 20
-  efectoGolpe: {fileID: 0}
-  efectoDerrota: {fileID: 0}
-  sonidoGolpe: {fileID: 0}
+  efectoGolpe: {fileID: 2414323172868199381, guid: 38b65d3399fd94d129aeafc50817d2b9, type: 3}
+  efectoDerrota: {fileID: 7082514423475397691, guid: 0093b1cca944d4c5aac41b10ecfee526, type: 3}
+  sonidoGolpe: {fileID: 8300000, guid: d582c70e8269343a2aabfdb2da7ae0aa, type: 3}
 --- !u!61 &6719608768399705281
 BoxCollider2D:
   m_ObjectHideFlags: 0

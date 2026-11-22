@@ -120,8 +120,8 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  efectoSalto: {fileID: 0}
-  sonidoSalto: {fileID: 0}
+  efectoSalto: {fileID: 2268673345354201186, guid: 94139b82430184baeaa551fac53c837c, type: 3}
+  sonidoSalto: {fileID: 8300000, guid: d1627a27211e041c9bd15a2d13c9bedd, type: 3}
 --- !u!50 &3662186733111104444
 Rigidbody2D:
   serializedVersion: 5

@@ -1,12 +1,14 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
-/// Actualiza el texto de vidas cuando el GameManager avisa un cambio.
+/// Muestra las vidas con texto, con iconos o con ambos.
 /// </summary>
 public class VidasUI : MonoBehaviour
 {
     public TextMeshProUGUI vidasText;
+    public Image[] corazones;
 
     private void OnEnable()
     {
@@ -20,6 +22,12 @@ public class VidasUI : MonoBehaviour
 
     private void ActualizarVidas()
     {
-        vidasText.text = $"Vidas: {GameManager.Vidas}";
+        if (vidasText != null) vidasText.text = $"Vidas: {GameManager.Vidas}";
+
+        if (corazones == null) return;
+        for (int i = 0; i < corazones.Length; i++)
+        {
+            if (corazones[i] != null) corazones[i].enabled = i < GameManager.Vidas;
+        }
     }
 }
