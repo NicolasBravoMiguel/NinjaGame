@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.4] - 22/11/2026
+### Added
+- Vidas con iconos de corazón en la interfaz (VidasUI).
+- Barra de vida del mini jefe y del jefe final (BarraVidaJefe).
+- Menú de pausa con Esc, con botones Continuar y Menú (MenuPausa).
+- Partículas: PolvoSalto, ChispasGolpe y HumoDerrota.
+- Estela (Trail Renderer) en el shuriken.
+- Luz global de noche, luces en los jefes y en la lava, y post-proceso con Bloom y Vignette.
+- Sacudida de cámara al recibir o hacer daño (CamaraRig + SacudidaCamara).
+- Efectos de sonido de salto, ataque y golpe, y música persistente entre escenas (MusicaPersistente).
+- Fondo en los tres niveles, con parallax en el nivel 1.
+- Notas del playtest en Playtest.md.
+### Changed
+- CamaraSube ahora funciona desde el CamaraRig.
+- El proyectil del jefe final usa el sprite shuriken_jefe.
+
 ## [0.0.3] - 21/11/2026
 ### Added
 - Sprites del jugador, mini jefe, jefe, escenario y corazones de vida.
