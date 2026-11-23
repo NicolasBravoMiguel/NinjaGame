@@ -39,7 +39,7 @@
 | Momento | Qué pasó | Gravedad | Idea para arreglarlo |
 |---|---|---|---|
 | Nivel 1, inicio | La única subida al principio es difícil de identificar | Frustra | Marcar el camino: una plataforma o escalera más visible, una flecha o una luz que la señale |
-| Nivel 3 | El jefe final es muy difícil | Frustra | Bajar un poco la vida del jefe, su velocidad en la fase 2 o la cantidad de proyectiles |
+| Nivel 3 | El jefe final es muy difícil | Detalle | Se decidió mantener la dificultad: el jugador logró pasarlo y comentó que el reto es parte de lo que le gustó |
 | General | Se necesitaron 16 intentos para terminar | Detalle | Revisar si 3 vidas por nivel es suficiente o agregar un punto de control |
 
 ## Preguntas finales
@@ -48,7 +48,7 @@
 - **¿Qué no entendiste?** Por dónde subir al inicio del nivel 1.
 - **¿Qué te gustó más?** El nivel 2 y las animaciones. Le gustan este tipo de juegos porque ponen a prueba los reflejos, la coordinación de movimientos y la vista.
 
-## Cambios para el día 5
+## Cambios realizados (día 5)
 
-1. Hacer más visible la primera subida del nivel 1.
-2. Ajustar la dificultad del jefe final sin quitarle el reto.
+1. **Nivel 1:** se movieron y agregaron plataformas para que haya más de un camino de subida desde el inicio, no solo uno difícil de identificar.
+2. **Nivel 3:** se mantuvo la dificultad del jefe final a propósito. Es difícil pero se puede pasar, que es lo que busca un juego estilo Cuphead.
