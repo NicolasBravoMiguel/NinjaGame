@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0] - 22/11/2026
+### Added
+- Build de macOS (Intel + Apple silicon).
+- README con descripción, controles, cómo abrir el proyecto, créditos y enlace al video.
+- Video del juego: https://youtu.be/XeLgIj3gZUo
+### Changed
+- Nivel 1: más de un camino de subida desde el inicio, según el playtest.
+- Playtest.md con los cambios realizados.
+
 ## [0.0.4] - 22/11/2026
 ### Added
 - Vidas con iconos de corazón en la interfaz (VidasUI).
